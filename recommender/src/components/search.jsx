@@ -1,8 +1,20 @@
 import React, { useState } from "react";
-function Search() {
+function Search({ setResults }) {
   const [name, setName] = useState("");
 
-  function submit() {}
+  function submit() {
+    // fetch("/data/?title="+name)
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //     setResults(data.Name);
+    //   });
+    fetch("/data/" + name)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data.recommendations);
+        setResults(data.recommendations);
+      });
+  }
 
   return (
     <div class="container d-flex">
@@ -18,7 +30,6 @@ function Search() {
           aria-label="Enter Movie Name"
           aria-describedby="inputGroup-sizing-default"
           value={name}
-          defaultValue={name}
           onChange={(e) => setName(e.target.value)}
         />
       </div>

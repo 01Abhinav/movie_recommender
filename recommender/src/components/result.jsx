@@ -1,57 +1,19 @@
-import React, { useState } from "react";
-
-function Result() {
-  const [results, setResults] = useState([]);
-
+function Result({ load }) {
+  //console.log(load, "-------  ");
   return (
     <div class="container ">
       <div class="card-group">
-        <div class="card" style={{ width: "18rem" }}>
-          <img class="card-img-top" src="stock.png" alt="Card image cap" />
-          <div class="card-body">
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-          </div>
-        </div>
-
-        <div class="card" style={{ width: "18rem" }}>
-          <img class="card-img-top" src="stock.png" alt="Card image cap" />
-          <div class="card-body">
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-          </div>
-        </div>
-        <div class="card" style={{ width: "18rem" }}>
-          <img class="card-img-top" src="stock.png" alt="Card image cap" />
-          <div class="card-body">
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-          </div>
-        </div>
-        <div class="card" style={{ width: "18rem" }}>
-          <img class="card-img-top" src="stock.png" alt="Card image cap" />
-          <div class="card-body">
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-          </div>
-        </div>
-        <div class="card" style={{ width: "18rem" }}>
-          <img class="card-img-top" src="stock.png" alt="Card image cap" />
-          <div class="card-body">
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-          </div>
-        </div>
+        {load.map((res) => {
+          //console.log(res, "====|");
+          return (
+            <div key={res[0]} class="card" style={{ width: "18rem" }}>
+              <img class="card-img-top" src={res[1]} alt="Card image cap" />
+              <div class="card-body">
+                <p class="card-text">{res[0]}</p>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

@@ -14,15 +14,16 @@ function Search({ movies, setResults, setPosters }) {
   }
 
   return (
-    <div class="container mt-5 mb-5">
+    <div class="container-fluid mt-3 mb-3">
       <div class="row">
-        <div className="col">
+        <div className="col "></div>
+        <div className="col col-lg-8">
           <Select
             options={movies.map((o) => ({ label: o, value: o }))}
             onChange={(e) => setName(e.value)}
           />
         </div>
-        <div className="col col-lg-2">
+        <div className="col">
           <button type="button" class="btn btn-dark" onClick={submit}>
             Search
           </button>

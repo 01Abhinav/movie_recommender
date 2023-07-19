@@ -28,7 +28,7 @@ function App() {
         posters.map(
           async (pos) =>
             await await fetch(
-              `https://api.themoviedb.org/3/movie/${pos}?api_key=bbb4ab124f6a691e76ab14b0866796bc&language=en-US`
+              `https://api.themoviedb.org/3/movie/${pos}?api_key=${process.env.REACT_APP_SECRET}&language=en-US`
             ).then((data) => data.json())
         )
       );
@@ -46,17 +46,15 @@ function App() {
 
         return imgurl;
       })
-      .then((o) => setImgs(o))
-      .then((e) => console.log(posters, "-===-"));
+      .then((o) => setImgs(o));
   }, [posters]);
 
   return (
-    <div className="App">
-      <div class="jumbotron jumbotron-fluid"></div>
+    <div className="App" style={{ backgroundColor: "#393E46" }}>
       <Banner />
-      <div class="jumbotron jumbotron-fluid"></div>
+
       <Search movies={movies} setPosters={setPosters} setResults={setResults} />
-      <p class="lead">Top 5 recommended movies</p>
+      <p style={{ color: "white" }}>Top 5 recommended movies</p>
       <Result
         load={results.map(function (el, i) {
           return [el, imgs[i]];

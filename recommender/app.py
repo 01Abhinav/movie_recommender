@@ -12,7 +12,7 @@ app = Flask(__name__,static_folder='client/build',static_url_path='')
 CORS(app)
 
 # app code
-new_df = pd.read_csv('./models/df.csv')
+new_df = pd.read_csv('./models/zf.csv')
 
 s0 = np.loadtxt('./models/model0.csv')
 s1 = np.loadtxt('./models/model1.csv')

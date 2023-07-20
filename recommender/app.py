@@ -12,13 +12,13 @@ app = Flask(__name__,static_folder='client/build',static_url_path='')
 CORS(app)
 
 # app code
-new_df = pd.read_csv('df.csv')
+new_df = pd.read_csv('./models/df.csv')
 
-s0 = np.loadtxt('model0.csv')
-s1 = np.loadtxt('model1.csv')
-s2 = np.loadtxt('model2.csv')
-s3 = np.loadtxt('model3.csv')
-s4 = np.loadtxt('model4.csv')
+s0 = np.loadtxt('./models/model0.csv')
+s1 = np.loadtxt('./models/model1.csv')
+s2 = np.loadtxt('./models/model2.csv')
+s3 = np.loadtxt('./models/model3.csv')
+s4 = np.loadtxt('./models/model4.csv')
 
 similarity = np.concatenate((s0,s1,s2,s3,s4))
 

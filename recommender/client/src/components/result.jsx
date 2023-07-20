@@ -1,9 +1,9 @@
 function Result({ load }) {
   return (
-    <div class="container container-fluid">
+    <div class="container container-fluid" >
       <div class="card-group">
         {load.map((res) => {
-          console.log(res, "====|");
+        
           return (
             <div
               key={res[0]}
@@ -21,5 +21,5 @@ function Result({ load }) {
     </div>
   );
 }
-
+////"proxy": "https://my-movie-recommender-5972.onrender.com/",
 export default Result;

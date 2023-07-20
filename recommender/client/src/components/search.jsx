@@ -19,6 +19,16 @@ function Search({ movies, setResults, setPosters }) {
         <div className="col "></div>
         <div className="col col-lg-8">
           <Select
+            theme={(theme) => ({
+              ...theme,
+              borderRadius: 0,
+              colors: {
+                ...theme.colors,
+                text: "orangered",
+                primary25: "orange",
+                primary: "black",
+              },
+            })}
             options={movies.map((o) => ({ label: o, value: o }))}
             onChange={(e) => setName(e.value)}
           />

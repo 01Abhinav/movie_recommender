@@ -13,7 +13,15 @@ CORS(app)
 
 # app code
 new_df = pd.read_csv('df.csv')
-similarity = np.loadtxt('model.csv')
+
+s0 = np.loadtxt('model0.csv')
+s1 = np.loadtxt('model1.csv')
+s2 = np.loadtxt('model2.csv')
+s3 = np.loadtxt('model3.csv')
+s4 = np.loadtxt('model4.csv')
+
+similarity = np.concatenate((s0,s1,s2,s3,s4))
+
 movie_names = new_df['title']
 
 def recommend(movie):

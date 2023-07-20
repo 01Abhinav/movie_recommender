@@ -10,7 +10,7 @@
 
 # production
 /build
-/backend/model.csv
+
 # misc
 .DS_Store
 .env

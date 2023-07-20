@@ -28,7 +28,7 @@ def recommend(movie):
 
 
 
-@app.route('/data/<title>')
+@app.route('/data/<title>',endpoint='get_time')
 @cross_origin()
 def get_time(title):
 
@@ -39,16 +39,16 @@ def get_time(title):
     }
     return obj
  
-@app.route('/getmovies')
-@cross_origin
+@app.route('/getmovies',endpoint='get_movies')
+@cross_origin()
 def get_movies():
     return movie_names.to_json()
 
-@app.route('/')
-@cross_origin
+@app.route('/',endpoint='serve')
+@cross_origin()
 def serve():
     return send_from_directory(app.static_folder,'index.html')
-    
+
 # Running app
 if __name__ == '__main__':
     app.run(debug=True)     
